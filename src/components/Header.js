@@ -52,11 +52,11 @@ function Header() {
           <li className="nav-item active">
             <Link className="nav-link" to="/">Home</Link>
           </li>
-          <li className="nav-item dropdown dropdown-hover">
-            <Link className='nav-link' to="/about" > About Me </Link>
+           <li className="nav-item dropdown dropdown-hover">
+            <Link className='nav-link' to="/resume" > Resume </Link>
           </li>
           <li className="nav-item dropdown dropdown-hover">
-            <Link className='nav-link' to="/portfolio">Portfolio</Link>
+            <Link className='nav-link' to="/about" > About Me </Link>
           </li>
       
           <li className="nav-item">
