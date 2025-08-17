@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion";
 import CardSlider from './CardSlider'
 
 import DevanandImg from "../images/DevanandImg.png"
@@ -14,6 +15,7 @@ function Home() {
   return (
     
     <div className='Home'>
+      
 
     <section className="hero"  >
       {/* start container */}
@@ -21,17 +23,20 @@ function Home() {
        
        <div className="row  align-items-center">
         <div className="col-lg-6">
-          <div className="content-item">
+        
+           <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+
+
+                <div className="content-item">
             <p className="text-warning fw-semibold mb-0">Hello! I AM</p>
-            <div className="home-title mb-0 fw-bold h1">
-              <span
-                className="typewrite "
-                data-period={2000}
-                data-type='[ "Harold Anderson.","Freelance Designer.","Graduate based in NYC." ]'
-              >
-                <span className="wrap">Devanand K</span>
-              </span>
-            </div>
+            
+            <h2>  Devanand K </h2>
+
             <p className="mt-3 text-muted">
               Building simple and beautiful things for complex interfaces is what I
               enjoy most about my work. I am also interested in crafting beautiful
@@ -86,6 +91,9 @@ function Home() {
               </div>
             </div>
           </div>
+             
+            </motion.div>
+        
         </div>
         <div className="col-lg-6 px-3">
           <div className="my-image">
@@ -105,224 +113,246 @@ function Home() {
       </div>
     </section>
 
-    <div className="container section about">
-      <div className="about-box">
-        <div className="row">
-          <div className="col-lg-6 position-relative">
-            <div className="image-round" />
-            <div className="about-image p-4 pb-0">
-              <img src={DevanandImg2} alt="" className="img-fluid" />
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="about-item p-5">
-              <h2 className="display-5 fw-semibold">About Me</h2>
-              <p className="text-muted fs-14">
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page when looking at its layout. The point
-                of using normal distribution of letters, as opposed to using
-                'Content here, content here', making it look like readable English..
-              </p>
-              <ul
-                className="nav nav-pills mb-3 mt-4 pt-2"
-                id="pills-tab"
-                role="tablist"
-              >
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link active"
-                    id="pills-home-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-home"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-home"
-                    aria-selected="true"
-                  >
-                    Skills
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    id="pills-profile-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-profile"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-profile"
-                    aria-selected="false"
-                    tabIndex={-1}
-                  >
-                    Experience
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    id="pills-contact-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-contact"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-contact"
-                    aria-selected="false"
-                    tabIndex={-1}
-                  >
-                    Education
-                  </button>
-                </li>
-              </ul>
-              <div className="tab-content" id="pills-tabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="pills-home"
-                  role="tabpanel"
-                  aria-labelledby="pills-home-tab"
-                >
-                  <div className="skill-item mt-4 pt-2">
-                    <div className="d-flex justify-content-between">
-                      <h6>Development</h6>
-                      <h6>65%</h6>
-                    </div>
-                    <div className="progress" style={{ height: 5 }}>
-                      <div
-                        className="progress-bar"
-                        role="progressbar"
-                        aria-valuenow={65}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                        style={{ width: "65%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item mt-4 pt-2">
-                    <div className="d-flex justify-content-between">
-                      <h6>Design</h6>
-                      <h6>95%</h6>
-                    </div>
-                    <div className="progress" style={{ height: 5 }}>
-                      <div
-                        className="progress-bar bg-warning"
-                        role="progressbar"
-                        aria-valuenow={95}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                        style={{ width: "95%" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item mt-4 pt-2">
-                    <div className="d-flex justify-content-between">
-                      <h6>Branding</h6>
-                      <h6>80%</h6>
-                    </div>
-                    <div className="progress" style={{ height: 5 }}>
-                      <div
-                        className="progress-bar bg-warning"
-                        role="progressbar"
-                        aria-valuenow={80}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                        style={{ width: "80%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="tab-pane fade"
-                  id="pills-profile"
-                  role="tabpanel"
-                  aria-labelledby="pills-profile-tab"
-                >
-                  <div className="experience">
-                    <div className="row position-relative">
-                      <div className="col-2">
-                        <div className="border-left" />
+
+
+        <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+                 <div className="container section about">
+                  <div className="about-box">
+                    <div className="row">
+                      <div className="col-lg-6 position-relative">
+                        <div className="image-round" />
+                        <div className="about-image p-4 pb-0">
+                          <img src={DevanandImg2} alt="" className="img-fluid" />
+                        </div>
                       </div>
-                      <div className="col-10">
-                        <div className="mt-4 pt-2">
-                          <h5>Developer</h5>
-                          <p className="text-muted fs-15">
-                            2000-2004 (4 year Experience)
+                      <div className="col-lg-6">
+                        <div className="about-item p-5">
+                          <h2 className="display-5 fw-semibold">About Me</h2>
+                          <p className="text-muted fs-14">
+                            It is a long established fact that a reader will be distracted by
+                            the readable content of a page when looking at its layout. The point
+                            of using normal distribution of letters, as opposed to using
+                            'Content here, content here', making it look like readable English..
                           </p>
-                          <p className="text-muted fs-15">
-                            There are many variations of passages of Lorem Ipsum
-                            available, but the majority have fered altation in some
-                            form, by injmour, or randomised words which don't look
-                            even slightlievable.{" "}
-                          </p>
+                          <ul
+                            className="nav nav-pills mb-3 mt-4 pt-2"
+                            id="pills-tab"
+                            role="tablist"
+                          >
+                            <li className="nav-item" role="presentation">
+                              <button
+                                className="nav-link active"
+                                id="pills-home-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#pills-home"
+                                type="button"
+                                role="tab"
+                                aria-controls="pills-home"
+                                aria-selected="true"
+                              >
+                                Skills
+                              </button>
+                            </li>
+                            <li className="nav-item" role="presentation">
+                              <button
+                                className="nav-link"
+                                id="pills-profile-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#pills-profile"
+                                type="button"
+                                role="tab"
+                                aria-controls="pills-profile"
+                                aria-selected="false"
+                                tabIndex={-1}
+                              >
+                                Experience
+                              </button>
+                            </li>
+                            <li className="nav-item" role="presentation">
+                              <button
+                                className="nav-link"
+                                id="pills-contact-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#pills-contact"
+                                type="button"
+                                role="tab"
+                                aria-controls="pills-contact"
+                                aria-selected="false"
+                                tabIndex={-1}
+                              >
+                                Education
+                              </button>
+                            </li>
+                          </ul>
+                          <div className="tab-content" id="pills-tabContent">
+                            <div
+                              className="tab-pane fade show active"
+                              id="pills-home"
+                              role="tabpanel"
+                              aria-labelledby="pills-home-tab"
+                            >
+                              <div className="skill-item mt-4 pt-2">
+                                <div className="d-flex justify-content-between">
+                                  <h6>Development</h6>
+                                  <h6>65%</h6>
+                                </div>
+                                <div className="progress" style={{ height: 5 }}>
+                                  <div
+                                    className="progress-bar"
+                                    role="progressbar"
+                                    aria-valuenow={65}
+                                    aria-valuemin={0}
+                                    aria-valuemax={100}
+                                    style={{ width: "65%" }}
+                                  />
+                                </div>
+                              </div>
+                              <div className="skill-item mt-4 pt-2">
+                                <div className="d-flex justify-content-between">
+                                  <h6>Design</h6>
+                                  <h6>95%</h6>
+                                </div>
+                                <div className="progress" style={{ height: 5 }}>
+                                  <div
+                                    className="progress-bar bg-warning"
+                                    role="progressbar"
+                                    aria-valuenow={95}
+                                    aria-valuemin={0}
+                                    aria-valuemax={100}
+                                    style={{ width: "95%" }}
+                                  />
+                                </div>
+                              </div>
+                              <div className="skill-item mt-4 pt-2">
+                                <div className="d-flex justify-content-between">
+                                  <h6>Branding</h6>
+                                  <h6>80%</h6>
+                                </div>
+                                <div className="progress" style={{ height: 5 }}>
+                                  <div
+                                    className="progress-bar bg-warning"
+                                    role="progressbar"
+                                    aria-valuenow={80}
+                                    aria-valuemin={0}
+                                    aria-valuemax={100}
+                                    style={{ width: "80%" }}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="tab-pane fade"
+                              id="pills-profile"
+                              role="tabpanel"
+                              aria-labelledby="pills-profile-tab"
+                            >
+                              <div className="experience">
+                                <div className="row position-relative">
+                                  <div className="col-2">
+                                    <div className="border-left" />
+                                  </div>
+                                  <div className="col-10">
+                                    <div className="mt-4 pt-2">
+                                      <h5>Developer</h5>
+                                      <p className="text-muted fs-15">
+                                        2000-2004 (4 year Experience)
+                                      </p>
+                                      <p className="text-muted fs-15">
+                                        There are many variations of passages of Lorem Ipsum
+                                        available, but the majority have fered altation in some
+                                        form, by injmour, or randomised words which don't look
+                                        even slightlievable.{" "}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="tab-pane fade"
+                              id="pills-contact"
+                              role="tabpanel"
+                              aria-labelledby="pills-contact-tab"
+                            >
+                              <div className="experience">
+                                <div className="row position-relative">
+                                  <div className="col-2">
+                                    <div className="border-left" />
+                                  </div>
+                                  <div className="col-10">
+                                    <div className="mt-4 pt-2">
+                                      <h5>Basic Computer Application</h5>
+                                      <p className="text-muted fs-15 mb-0">
+                                        1996-1998 (3 year)
+                                      </p>
+                                      <p className="text-muted fs-15 mb-0">
+                                        There are many variations of passages of Lorem Ipsum
+                                        available.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="row position-relative">
+                                  <div className="col-2">
+                                    <div className="border-left" />
+                                  </div>
+                                  <div className="col-10">
+                                    <div className="mt-4 pt-2">
+                                      <h5>Mastar Computer Application</h5>
+                                      <p className="text-muted fs-15 mb-0">
+                                        1999-2000 (2 year)
+                                      </p>
+                                      <p className="text-muted fs-15">
+                                        The majority have fered altation in some form, by
+                                        injmour, or randomised words which don't look even
+                                        slightlievable.{" "}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  className="tab-pane fade"
-                  id="pills-contact"
-                  role="tabpanel"
-                  aria-labelledby="pills-contact-tab"
-                >
-                  <div className="experience">
-                    <div className="row position-relative">
-                      <div className="col-2">
-                        <div className="border-left" />
-                      </div>
-                      <div className="col-10">
-                        <div className="mt-4 pt-2">
-                          <h5>Basic Computer Application</h5>
-                          <p className="text-muted fs-15 mb-0">
-                            1996-1998 (3 year)
-                          </p>
-                          <p className="text-muted fs-15 mb-0">
-                            There are many variations of passages of Lorem Ipsum
-                            available.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row position-relative">
-                      <div className="col-2">
-                        <div className="border-left" />
-                      </div>
-                      <div className="col-10">
-                        <div className="mt-4 pt-2">
-                          <h5>Mastar Computer Application</h5>
-                          <p className="text-muted fs-15 mb-0">
-                            1999-2000 (2 year)
-                          </p>
-                          <p className="text-muted fs-15">
-                            The majority have fered altation in some form, by
-                            injmour, or randomised words which don't look even
-                            slightlievable.{" "}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </motion.div>
+
+          
+
 
   
    <div className="section service" id="service">
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-lg-6">
-          <div className="text-center mb-5">
-            <h6 className="mb-0 text-muted fs-15">WHAT WE OFFER</h6>
-            <h2>Affordable Services</h2>
-            <p className="para-width text-muted mb-0 fs-15">
-              {" "}
-              is simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley
-            </p>
-          </div>
+
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+                  <div className="text-center mb-5">
+                      <h6 className="mb-0 text-muted fs-15">WHAT WE OFFER</h6>
+                      <h2>Affordable Services</h2>
+                      <p className="para-width text-muted mb-0 fs-15">
+                        {" "}
+                        is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley
+                      </p>
+                    </div>
+            
+          </motion.div>
         </div>
       </div>
       <div className="row">
@@ -552,7 +582,7 @@ function Home() {
                     type="submit"
                     id="submit"
                     name="send"
-                    className="submitBnt btn btn-rounded btn-primary"
+                    className="submitBnt btn btn-rounded btn-primary hover-lift"
                     defaultValue="Send Message"
                   />
                 </div>

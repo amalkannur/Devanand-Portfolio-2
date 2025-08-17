@@ -405,7 +405,125 @@ button {
         }
         }
     }
+.About{ 
+    background-color: #f4f6fb;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    .abt-img{ 
+        width: 80%;
+    }
+    .social-icon {
+        border-radius: 18px 18px 18px 0;
+        border: 1px dashed rgba(47, 180, 174, .2);
+        text-align: center;
+        margin: 0 5px;
+        transition: all .5s ease-in-out;
+        color: #e4b615;
+        height: 2rem;
+        width: 2rem;
+        line-height: 2rem;
+    }
+    .abt-btn{ 
+        border: 1px solid #e4b615;
+        background: #f4f6fb;
+        color: #e4b615;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all ease-in 250ms ;
+        &:hover{ 
+            color: #f4f6fb;
+            background: #e4b615;
+        }
+    }
+    
+}
+.Contact{ 
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("./images/contactBG.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    min-height: 98vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
 
+    
+    
+    .contact-info {
+    padding-left: 1rem;
+    border-left: 3px solid #4F75B4; // subtle accent divider
+
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+
+        i {
+        font-size: 1.1rem;
+        color: #4F75B4; // accent color
+        margin-right: 0.6rem;
+        }
+    }
+    }
+    .contact-form{ 
+          background-color: #f5f5f5;
+          padding: 24px;
+          border-radius: 8px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+          h2{ 
+            font-weight: 700;
+            color: #1c2f50;
+            text-align: left;
+          }
+       
+        input,textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            background-color: #fff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            }
+            /* Focus state */
+        input:focus,
+        textarea:focus {
+        border-color: #4F75B4; /* your accent color */
+        box-shadow: 0 0 0 3px rgba(79, 117, 180, 0.2); /* subtle glow */
+        }
+
+        /* Textarea resizing */
+        textarea {
+        resize: vertical;
+        min-height: 120px;
+        }
+        button.send-btn {
+            margin-top: 1.2rem;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #4F75B4; /* accent color */
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+            }
+    }
+}
 footer{ 
     background-color: #1c2f50;
 
@@ -438,6 +556,26 @@ footer{
 
 // ANIMATIONS
 
+
+
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
 
 
 @keyframes translate {
